@@ -1,0 +1,53 @@
+﻿@model Dekorasyoncunuz.Models.Dekorasyon
+
+@{
+    ViewData["Title"] = "Detaylar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content flex-column-fluid" id="kt_content">
+    <div class="row">
+        <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <form asp-controller="Satinal" asp-action="Index">
+                <h1>Detaylar</h1>
+                <button type="submit" class="btn btn-danger">
+                    <a id="btn_text">Satın al</a>
+                </button>
+                <div>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dekorasyon_fiyat)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dekorasyon_fiyat) TL
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dekorasyon_isim)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dekorasyon_isim)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dekorasyon_cinsi)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dekorasyon_cinsi)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dekorasyon_marka)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dekorasyon_marka)
+                        </dd>
+                    </dl>
+                    <img src="@Url.Content("~/Metronic/Theme/Demo11/dist/assets/DekorasyonFotolar/" + Model.Dekorasyon_id + ".jpg")" width="1200" height="900" />
+                </div>
+                <div>
+                    @*<a asp-action="Edit" asp-route-id="@Model.Dekorasyon_id">Edit</a> |*@
+                    @*<a asp-action="Index">Back to List</a>*@
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/js/Custom/Detaylar.js"></script>

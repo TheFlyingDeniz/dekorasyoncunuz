@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Dekorasyoncunuz.Models.Dekorasyon>
+
+@{
+    ViewData["Title"] = "Dekorasyonlar";
+}
+<div class="content flex-column-fluid" id="kt_content">
+    <div class="row">
+        <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+
+            <h1>Dekorasyonlarımız</h1>
+
+            <p>
+                @*<a asp-action="Create">Create New</a>*@
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Dekorasyon_isim)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Dekorasyon_fiyat)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Dekorasyon_cinsi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Dekorasyon_marka)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dekorasyon_isim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dekorasyon_fiyat) TL
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dekorasyon_cinsi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dekorasyon_marka)
+                            </td>
+                            <td>
+                                @* <a asp-action="Edit" asp-route-id="@item.Dekorasyon_id">Edit</a> *@
+                                <a asp-action="Details" asp-route-id="@item.Dekorasyon_id">Detaylar</a>
+                                @*<a asp-action="Delete" asp-route-id="@item.Dekorasyon_id">Delete</a> *@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/js/Custom/Dekorasyonlar.js"></script>

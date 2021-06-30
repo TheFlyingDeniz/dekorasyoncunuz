@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Satın al";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content flex-column-fluid" id="kt_content">
+    <div class="row">
+        <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <h4 class="odeme">Ödeme türünü seçiniz.</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tur" id="radioEft" checked>
+                    <label class="form-check-label" for="radioEft">
+                        Eft
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tur" id="radioHavale">
+                    <label class="form-check-label" for="radioHavale">
+                        Havale
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tur" id="radioKapi">
+                    <label class="form-check-label" for="radioKapi">
+                        Kapıda ödeme
+                    </label>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div>
+                <h4 class="odeme">Taksit sayısı seçiniz</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="taksit" id="radioPesin" checked>
+                    <label class="form-check-label" for="radioPesin">
+                        Peşin ödeme
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="taksit" id="radioUcAy">
+                    <label class="form-check-label" for="radioUcAy">
+                        3 ay
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="taksit" id="radioAltıAy">
+                    <label class="form-check-label" for="radioAltıAy">
+                        6 ay
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="taksit" id="radioOnikiAy">
+                    <label class="form-check-label" for="radioOnikiAy">
+                        12 ay
+                    </label>
+                </div>
+            </div>
+            <br />
+            <br />
+            @*<form id="hesap_numarasi" onsubmit="return validateForm()">
+                    <div id="hesap" class="form-group">
+                        <label for="hesapno">Hesap numaranızı giriniz.</label>
+                        <input type="number" class="form-control" name="hesapno" id="hesapno" placeholder="Hesap no" maxlength="16">
+                    </div>
+                </form>
+            *@
+        <form name="myForm">
+            <label for="hesapno">Hesap numaranızı giriniz.</label>
+            <input type="number" class="form-control" name="hesapno" id="hesapno" placeholder="Hesap no">
+            <input id="Satinal" class="btn btn-danger" type="button" value="Satın al"  onclick="return validateForm()">
+        </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/js/Custom/Satinal.js"></script>
